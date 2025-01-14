@@ -48,13 +48,14 @@
             text-align: left;
         }
         input[type="text"], input[type="tel"] {
-            width: 100%;
+            width: calc(100% - 20px); /* 양쪽 10px 패딩 적용 */
             padding: 10px;
             margin-bottom: 15px;
             margin-right: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
+            box-sizing: border-box; /* 패딩 포함 */
         }
         .checkbox-group {
             text-align: left;
@@ -77,10 +78,10 @@
 <body>
     <div class="container">
         <div class="app-header">
-            <img src="app-icon.png" alt="App Icon">
+            <img src="gnv_app_icon.png" alt="App Icon">
             <h1>GINOVO - 스마트 퍼팅 솔루션</h1>
         </div>
-        <form action="/delete-account" method="post">
+        <form id="deleteForm" action="/delete-account" method="post">
             <label for="phone">휴대폰 번호</label>
             <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required>
             <div class="checkbox-group">
@@ -90,5 +91,7 @@
             <button type="submit">계정 삭제 요청</button>
         </form>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
